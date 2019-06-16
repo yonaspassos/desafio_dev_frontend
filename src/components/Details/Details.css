@@ -1,0 +1,12 @@
+.details {
+    width: 100%;
+}
+
+.details h3 {
+    padding-top: 10px;
+    color:#007bff;
+}
+
+.details span {
+    color: #007bff;
+}

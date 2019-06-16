@@ -1,16 +1,33 @@
 import React from'react';
+import { connect } from 'react-redux';
+import './Details.css'
 
 const details = props => {
-    return <div className="list-details">
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Nome: fulano</li>
-            <li class="list-group-item">Telefone: 5555-6666</li>
-            <li class="list-group-item">E-mail: example@example.com</li>
-            <li class="list-group-item">Login: fula_no</li>
-            <li class="list-group-item">Senha: *******</li>
-        </ul>
-    </div>
 
+    const user = props.users.find(user => user.id === parseInt(props.match.params.id));
+    if (user) {
+        return (
+            <div className="details">
+                <h3>Cadastro</h3>
+                <div className="list-group list-group-flush">
+                    <p className="list-group-item"><span>Nome:</span> {user.name}</p>
+                    <p className="list-group-item"><span>Telefone:</span> {user.phone}</p>
+                    <p className="list-group-item"><span>E-mail:</span> {user.mail}</p>
+                    <p className="list-group-item"><span>Username:</span> {user.username}</p>
+                </div>
+            </div>
+        )
+    }
+
+    return null;
+        
 }
 
-export default details;
+
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
+}
+
+export default connect(mapStateToProps)(details);

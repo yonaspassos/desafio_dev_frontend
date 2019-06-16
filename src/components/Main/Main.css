@@ -1,0 +1,25 @@
+.container.userList {
+    display: flex;   
+}
+
+.userList .list {
+    width: 100%;
+}
+
+.userList .actions-wrapper {
+    display: inline-block;
+}
+
+.userList .actions-wrapper a {
+    margin: 5px;
+}
+
+.userList .actions-wrapper button {
+    border: none;
+    background: none;
+    color: #007bff;
+}
+
+.userList .actions-wrapper button:hover {
+    color: #0056B3;
+}
